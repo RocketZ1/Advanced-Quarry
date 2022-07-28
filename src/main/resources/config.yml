@@ -1,0 +1,79 @@
+#quarry-radius will be the radius of the quarry on the x and z coordinate plane.
+quarry-radius: 8
+
+#quarry-vert-depth determines how far down the quarry can mine from itself before it turns off.
+#-1 no depth limit
+quarry-vert-depth: 5
+
+#one-quarry-per-radius will determine if players can place 2 quarries with overlapping mining regions.
+#Having this option on false might cause duplication bugs if there is more than one quarry mining in one area at a time!
+one-quarry-per-radius: true
+
+#quarry-delay will determine how long it takes to mine each block. Measured in ticks (20 ticks = 1 second).
+quarry-delay: 20
+
+#quarry-requirements will determine the requirements to start each quarry. To add a requirement, you need to add it's Material ID (example: STONE)
+#and set the amount of that item required by adding "amount:(your amount)" under the ID.
+quarry-requirements:
+  DIAMOND_PICKAXE:
+    amount: 3
+  COAL:
+    amount: 64
+
+#consume-requirements-on-start will determine if the requirements are destroyed on quarry start, so they can't be reused
+consume-requirements-on-start: true
+
+#chosen-list will determine if the plugin will use the blacklist or whitelist. (1 by default)
+#1 blacklist
+#2 whitelist
+
+chosen-list: 1
+
+#blacklisted-blocks will prevent some block types from being mined with the quarry
+blacklisted-blocks:
+  - "BEDROCK"
+  - "COMMAND_BLOCK"
+  - "BARRIER_BLOCK"
+  - "LAVA"
+  - "WATER"
+  - "SPAWNER"
+
+#whitelisted-blocks will allow only the block types in the list to be mined with the quarry
+whitelisted-blocks:
+  - "STONE"
+  - "DIRT"
+  - "GRASS_BLOCK"
+  - "IRON_ORE"
+  - "COAL_ORE"
+
+#mine-blocks-without-collecting-list works differently from the whitelist or blacklist. Block types on this list will be mined by the quarry, but it's drops will not be collected or dropped!
+#Becareful about adding block types that can hold items (Like chests and furnaces) as any items inside them will be deleted when the block is removed!
+mine-blocks-without-collecting-list:
+  - "DIRT"
+  - "STONE"
+
+#craftable-quarry will determine if players can craft quarries (if true, players will need the permission advancedquarry.craft to be able to craft a quarry)
+craftable-quarry: true
+
+#craftable-quarry-requirements will determine the requirements required to craft a quarry, this is ignored if craftable-quarry is false.
+craftable-quarry-requirements:
+  REDSTONE:
+    amount: 128
+  REDSTONE_LAMP:
+    amount: 16
+  NETHERITE_BLOCK:
+    amount: 1
+
+#stop-quarry-no-room will stop the quarry if the chest above it gets full.
+#This will prevent the quarry from dropping the items on the ground, reducing lag from items on the ground.
+stop-quarry-no-room: false
+
+#quarry-runtime is the amount of time a quarry will run for until it stops itself.
+#Time in seconds
+#Put -1 for it to run until it reaches the bottom of the world.
+quarry-runtime: 60
+
+#blacklisted-worlds will blacklist the quarry from being placed and run inside those worlds.
+blacklisted-worlds:
+  - "world_nether"
+  - "survival1"

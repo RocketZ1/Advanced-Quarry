@@ -1,0 +1,21 @@
+name: AdvancedQuarry
+version: 1.1.3.3
+author: RocketZ1
+main: me.RocketZ1.AdvancedQuarry.Main
+description: This plugin adds craftable quarry machines which can collect resources by mining large chunks of land.
+api-version: 1.16
+softdepend:
+  - WorldGuard
+  - GriefPrevention
+commands:
+  advancedquarry:
+    permission: advancedquarry.admin
+    description: Gives a selected player a quarry block
+    aliases: [aq]
+permissions:
+  advancedquarry.admin:
+    default: op
+    description: gives access to /advancedquarry
+  advancedquarry.craft:
+    default: op
+    description: allows players to craft quarries, won't work if disabled in config.
